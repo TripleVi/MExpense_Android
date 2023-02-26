@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="32dp"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:background="@color/form_bg_color"
+        android:theme="@style/Theme.Form"
+        tools:context=".fragments.expense.ExpenseFormFragment">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/menu_expense_categories"
+            style="@style/Widget.App.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="24dp"
+            android:hint="Select Category"
+            app:errorEnabled="true"
+            app:helperTextEnabled="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:startIconContentDescription="expense type icon"
+            app:startIconDrawable="@drawable/ic_expense_type_24">
+
+            <AutoCompleteTextView
+                android:id="@+id/dd_expense_categories"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="none"
+                android:dropDownHeight="250dp"
+                android:nextFocusLeft="@id/dd_expense_categories"
+                android:nextFocusUp="@id/dd_expense_categories"
+                tools:layout_editor_absoluteX="75dp"
+                tools:layout_editor_absoluteY="423dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_date_picker"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="24dp"
+            android:hint="Date"
+            app:errorEnabled="true"
+            app:helperTextEnabled="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/menu_expense_categories"
+            app:startIconContentDescription="date icon"
+            app:startIconDrawable="@drawable/ic_baseline_date_range_24">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_date_picker"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:editable="false"
+                android:inputType="none" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_cost"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="24dp"
+            android:hint="Cost"
+            app:counterEnabled="true"
+            app:counterMaxLength="12"
+            app:errorEnabled="true"
+            app:helperTextEnabled="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/til_date_picker"
+            app:startIconContentDescription="dollar icon"
+            app:startIconDrawable="@drawable/ic_dollar_24">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_cost"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:maxLength="12" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_comment"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="24dp"
+            android:hint="Notes"
+            app:errorEnabled="true"
+            app:helperTextEnabled="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/til_cost"
+            app:startIconContentDescription="description icon"
+            app:startIconDrawable="@drawable/ic_outline_description_24">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_comment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:gravity="top"
+                android:inputType="textMultiLine"
+                android:maxLines="4"
+                android:minLines="4"
+                tools:layout_editor_absoluteX="52dp"
+                tools:layout_editor_absoluteY="488dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/btn_image_add"
+            style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:text="Add Image"
+            android:textAllCaps="false"
+            android:textSize="18sp"
+            app:icon="@drawable/ic_baseline_add_circle_outline_24"
+            app:iconSize="30dp"
+            app:layout_constraintStart_toEndOf="@+id/img_expense"
+            app:layout_constraintTop_toTopOf="@+id/img_expense" />
+
+        <Button
+            android:id="@+id/btn_image_delete"
+            style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:enabled="false"
+            android:text="Delete Image"
+            android:textAllCaps="false"
+            android:textSize="18sp"
+            app:icon="@drawable/ic_baseline_remove_circle_outline_24"
+            app:iconSize="30dp"
+            app:layout_constraintBottom_toBottomOf="@+id/img_expense"
+            app:layout_constraintStart_toEndOf="@+id/img_expense" />
+
+        <ImageView
+            android:id="@+id/img_expense"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:layout_marginStart="24dp"
+            android:background="@drawable/bg_image_preview"
+            android:contentDescription="Expense Image"
+            android:padding="1dp"
+            android:visibility="visible"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/til_comment" />
+
+        <Button
+            android:id="@+id/btn_save"
+            style="@style/Widget.MaterialComponents.Button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="24dp"
+            android:padding="12dp"
+            android:text="Save"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/img_expense" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

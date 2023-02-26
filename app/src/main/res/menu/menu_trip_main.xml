@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_trip_search"
+        android:title="Search"
+        android:icon="@drawable/ic_baseline_search_24"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_trip_sync"
+        android:title="Sync"
+        android:icon="@drawable/ic_baseline_cloud_upload_24"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_trip_delete"
+        android:title="Delete"
+        android:icon="@drawable/ic_outline_delete_24"
+        app:showAsAction="ifRoom" />
+</menu>

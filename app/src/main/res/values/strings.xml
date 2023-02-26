@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">MExpense</string>
+    <string name="trip_main">Trips</string>
+    <string name="trip_form_add">New Trip</string>
+    <string name="trip_form_edit">Edit Trip</string>
+    <string name="expense_main">Expenses</string>
+    <string name="expense_form_add">New Expense</string>
+    <string name="expense_form_edit">Edit Expense</string>
+    <string name="expense_details">Expense Details</string>
+    <string name="trip_search">Search</string>
+</resources>

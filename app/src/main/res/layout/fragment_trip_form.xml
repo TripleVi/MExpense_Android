@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="32dp"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:background="@color/form_bg_color"
+        android:theme="@style/Theme.Form"
+        tools:context=".fragments.trip.TripFormFragment">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/menu_trip_categories"
+            style="@style/Widget.App.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="24dp"
+            android:hint="Select a Category"
+            app:errorEnabled="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:startIconContentDescription="trip icon"
+            app:startIconDrawable="@drawable/ic_outline_flight_24">
+
+            <AutoCompleteTextView
+                android:id="@+id/dd_trip_categories"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="none"
+                android:dropDownHeight="250dp"
+                android:nextFocusLeft="@id/dd_trip_categories"
+                android:nextFocusUp="@id/dd_trip_categories"
+                tools:layout_editor_absoluteX="75dp"
+                tools:layout_editor_absoluteY="423dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_destination"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="24dp"
+            android:hint="Destination"
+            app:counterEnabled="true"
+            app:counterMaxLength="100"
+            app:errorEnabled="true"
+            app:helperTextEnabled="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/menu_trip_categories"
+            app:startIconContentDescription="destination icon"
+            app:startIconDrawable="@drawable/ic_destination_32">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_destination"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:maxLength="100"
+                tools:layout_editor_absoluteX="52dp"
+                tools:layout_editor_absoluteY="488dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_date_picker"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="24dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/til_destination">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_start_date_picker"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="Start Date"
+                app:errorIconDrawable="@null"
+                app:errorEnabled="true"
+                app:helperTextEnabled="true"
+                app:startIconContentDescription="date icon"
+                app:startIconDrawable="@drawable/ic_baseline_date_range_24">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_start_date_picker"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:editable="false"
+                    android:inputType="none"
+                    android:textSize="16sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Space
+                android:layout_width="6dp"
+                android:layout_height="match_parent" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_end_date_picker"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="End Date"
+                app:errorIconDrawable="@null"
+                app:errorEnabled="true"
+                app:helperTextEnabled="true"
+                app:startIconContentDescription="date icon"
+                app:startIconDrawable="@drawable/ic_baseline_date_range_24">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_end_date_picker"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:editable="false"
+                    android:inputType="none"
+                    android:textSize="16sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/sw_risk_assessment"
+            style="@style/Widget.MaterialComponents.CompoundButton.Switch"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="24dp"
+            android:checked="false"
+            android:text="Required Risk Assessment?"
+            android:textAppearance="@style/TextAppearance.App.Subtitle1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ll_date_picker" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_description"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="24dp"
+            android:hint="Notes"
+            app:errorEnabled="true"
+            app:helperTextEnabled="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sw_risk_assessment"
+            app:startIconContentDescription="description icon"
+            app:startIconDrawable="@drawable/ic_outline_description_24">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:gravity="top"
+                android:inputType="textMultiLine"
+                android:maxLines="4"
+                android:minLines="4"
+                tools:layout_editor_absoluteX="52dp"
+                tools:layout_editor_absoluteY="488dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/btn_save"
+            style="@style/Widget.MaterialComponents.Button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="24dp"
+            android:padding="12dp"
+            android:text="Save"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/til_description" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
